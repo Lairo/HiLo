@@ -21,9 +21,11 @@ namespace HiLo
                 if (key == 'h') HiLoGame.Guess(true);
                 else if (key == 'l') HiLoGame.Guess(false);
                 else if (key == '?') HiLoGame.Hint();
+                else if (key == '0') HiLoGame.Cheat();
                 else return;
             }
             Console.WriteLine("The pot is empty. Bye!");
+            Console.WriteLine("Press 0  to cheat");
         }
     }
 }

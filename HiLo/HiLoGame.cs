@@ -10,7 +10,7 @@ namespace HiLo
     internal static class HiLoGame
     {
         public const int MAXIMUM = 10;
-        private static Random random = new Random();
+        public static Random random = new Random();
         private static int currentNumber = random.Next(1, MAXIMUM + 1);
         private static int nextNumber = random.Next(1, MAXIMUM + 1);
         private static int pot = 10;
@@ -19,7 +19,7 @@ namespace HiLo
         {
             return pot;
 
-        }        
+        }
 
         public static void Guess(bool higher)
         {
@@ -36,15 +36,23 @@ namespace HiLo
             }
 
             currentNumber = nextNumber;
-            nextNumber = random.Next(1, MAXIMUM + 1);            
-            Console.WriteLine($"The current number is {currentNumber}");            
+            nextNumber = random.Next(1, MAXIMUM + 1);
+            Console.WriteLine($"The current number is {currentNumber}");
         }
 
         public static void Hint()
         {
-            Debug.WriteLine("The current number is " + currentNumber);
-            Console.WriteLine("You stupid Hint ");
+            int half = MAXIMUM / 2;
+            if (nextNumber >= half)
+                Console.WriteLine($"The current number is {currentNumber}," +
+                $" the next number is at least {half}\n");
+            else Console.WriteLine($"The current number is {currentNumber}," +
+            $" the next is at most {half} \n");
+            pot--;
         }
-
+        public static void Cheat()
+        {
+            Console.WriteLine($"The next number is {nextNumber}");
+        }
     }
 }
