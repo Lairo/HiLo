@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace HiLo
 {
-    internal static class HiLoGame
+     class HiLoGame
     {
-        public const int MAXIMUM = 10;
+        const int MAXIMUM = 10;
         public static Random random = new Random();
         private static int currentNumber = random.Next(1, MAXIMUM + 1);
         private static int nextNumber = random.Next(1, MAXIMUM + 1);

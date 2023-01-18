@@ -33,8 +33,6 @@ namespace HiLo
             }
             Console.WriteLine("The pot is empty. Bye!");
             Console.WriteLine("Press 0  to cheat");
-
-            
         }
     }
 }
