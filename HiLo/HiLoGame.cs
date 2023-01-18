@@ -50,6 +50,9 @@ namespace HiLo
             $" the next is at most {half} \n");
             pot--;
         }
+        /// <summary>
+        /// Displays the Next Number 
+        /// </summary>
         public static void Cheat()
         {
             Console.WriteLine($"The next number is {nextNumber}");
